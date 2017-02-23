@@ -79,7 +79,7 @@
 			$handle = fopen("./notes.txt", "a+");
 			if(isset($_POST['Submit'])){
 				$newLine = $_POST['note'];
-				$priority = $_POST['prior'];
+				$priority = trim($_POST['prior']);
 				if(!is_numeric($priority) || !($priority >= 1 && $priority <= 5)){
 					trigger_error("Priority is invalid!!!"); 
 					die();
